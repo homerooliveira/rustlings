@@ -29,9 +29,9 @@ mod my_module {
     // TODO: Complete the function as described above.
     // pub fn transformer(input: ???) -> ??? { ??? }
     pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
-        input.iter().map(|e| {
+        input.into_iter().map(|e| {
           match e.1 {
-            Command::Append(s) => e.0.clone() + &"bar".repeat(s),
+            Command::Append(s) => e.0 + &"bar".repeat(s),
             Command::Trim => e.0.trim().to_string(),
             Command::Uppercase => e.0.to_uppercase(),
           }  

@@ -1,0 +1,15 @@
+# generate pipe for rust
+name: Rust CI
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions-rust-lang/setup-rust-toolchain@v1
+        - run: rustc --version
+        - run: cargo build --verbose
